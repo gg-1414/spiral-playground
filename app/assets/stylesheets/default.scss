@@ -1,0 +1,26 @@
+body { 
+  width: 100vw; 
+  height: 100vh; 
+  background: $dark-blue; /* darkest blue-black */
+  margin: 0;
+  display: flex;
+  overflow: hidden; 
+  justify-content: center;
+  align-items: center;
+}
+
+* { font-family: monospace; }
+
+button:focus { 
+  outline: none; 
+}
+
+label {
+  color: $white;;
+  font-size: scale(2);
+  white-space: nowrap;
+}
+
+input {
+  margin-top: scale(1); 
+}

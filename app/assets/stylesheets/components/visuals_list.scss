@@ -1,0 +1,74 @@
+#spirals-list {
+  position: fixed;
+  display: flex;  
+  flex-direction: column;
+  z-index: 15;
+  align-items: center;
+  right: 0;
+  width: scale(25);
+  height: 100%;
+  
+  button {
+    margin-top: scale(4);
+    font-size: scale(4);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 450ms;
+    border: 5px solid rgba(0,0,0,0.1);
+    height: scale(10);
+    width: scale(17);
+    opacity: 0.5;
+    position: relative; 
+
+    &:hover {
+      opacity: 1;
+      transition: 300ms;
+    }
+
+    &:focus {
+      outline: none; 
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; 
+      background-size: cover; 
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* set background images of spiral visuals */
+    &:nth-child(1):before {
+      background-image: url('https://gina-leee-portfolio.s3.us-east-2.amazonaws.com/spirals/spiral_1.png');
+    }
+
+    &:nth-child(2):before {
+      background-image: url('https://gina-leee-portfolio.s3.us-east-2.amazonaws.com/spirals/spiral_2.png');
+    }
+
+    &:nth-child(3):before {
+      background-image: url('https://gina-leee-portfolio.s3.us-east-2.amazonaws.com/spirals/spiral_3.png');
+    }
+
+    &:nth-child(4):before {
+      background-image: url('https://gina-leee-portfolio.s3.us-east-2.amazonaws.com/spirals/spiral_4.png');
+    }
+
+    &:nth-child(5) {
+      display: flex;
+      justify-content: center;
+
+      &:before {
+        content: "CUSTOM";
+        background: transparent;
+        width: auto;
+        position: relative;
+        color: $gray; 
+      }
+    }
+  }
+}

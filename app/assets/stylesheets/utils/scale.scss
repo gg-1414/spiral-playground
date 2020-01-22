@@ -1,0 +1,50 @@
+// 8-point Scale
+@function scale($value) {
+  @return (8 * $value) +px; 
+}
+
+// Media Screen Sizes 
+$screen-xs: 400px;
+$screen-sm: 700px;
+$screen-md: 960px;
+$screen-lg: 1280px;
+$screen-xl: 1440px;
+$screen-xxl: 1640px;
+
+@mixin media($class) {
+  @if $class == mobile-only {
+    @media (max-width: #{$screen-xs - 1}) { @content; }
+  }
+  
+  @else if $class == small-only {
+    @media (max-width: #{$screen-sm - 1}) { @content; }
+  }
+
+  @else if $class == xs {
+    @media (min-width: #{$screen-xs}) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: #{$screen-sm}) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: #{$screen-md}) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: #{$screen-lg}) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (min-width: #{$screen-xl}) { @content; }
+  }
+
+  @else if $class == xxl {
+    @media (min-width: #{$screen-xxl}) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: mobile-only, small-only, xs, sm, md, lg, xl, xxl";
+  }
+}
